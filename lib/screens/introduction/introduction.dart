@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate/resources/images.dart';
 import 'package:flutter_boilerplate/resources/strings.dart';
-import 'package:flutter_boilerplate/routes/routes.dart';
 import 'package:flutter_boilerplate/themes/colors.dart';
-import 'package:flutter_boilerplate/utils/navigations.dart';
 import 'package:flutter_boilerplate/widgets/common/buttons/primary_button.dart';
 
 /// [IntroductionScreen] is the intro screen that loads into the app.

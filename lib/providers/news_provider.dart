@@ -4,7 +4,7 @@ import 'package:flutter_boilerplate/core/models/news_model.dart';
 import 'package:flutter_boilerplate/core/services/news/news_services.dart';
 
 class NewsProvider extends ChangeNotifier {
-  bool isLoading = false;
+  bool isLoading = true;
   NewsModel newsData;
 
   void changeLoadingStatus(bool loading) {
@@ -14,9 +14,13 @@ class NewsProvider extends ChangeNotifier {
     });
   }
 
-  void fetchNews() async {
-    final NewsModel response = await NewsService().fetchNews();
-    newsData = response;
+  void fetchNews(page) async {
+    final NewsModel response = await NewsService().fetchNews(page);
+    if (newsData != null && newsData.articles != null) {
+      newsData.articles.addAll(response.articles);
+    } else {
+      newsData = response;
+    }
     isLoading = false;
     notifyListeners();
   }

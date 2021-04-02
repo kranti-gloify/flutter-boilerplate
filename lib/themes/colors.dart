@@ -11,9 +11,7 @@ import 'package:pigment/pigment.dart';
 class AppColors {
   AppColors._();
 
-  // static final Color darkPurple = Pigment.fromString('#6a1b9a');
-  // static final Color lightPurple = Pigment.fromString('#9c4dcc');
-  static final Color lightSilver = Pigment.fromString('#D8D8D8');
+  static final Color lightSilver = Pigment.fromString('#ced9de');
   static const Color TRANSPARENT = Colors.transparent;
   static final Color white = Pigment.fromString("#ffffff");
 

@@ -8,9 +8,9 @@ import 'package:flutter_boilerplate/widgets/news/news_widget.dart';
 class NewsContainer extends StatelessWidget {
   static NewsProvider _newsProvider;
 
-  void getNews() async {
-    _newsProvider.changeLoadingStatus(true);
-    _newsProvider.fetchNews();
+  void getNews(page) async {
+    page < 2 ?? _newsProvider.changeLoadingStatus(true);
+    await _newsProvider.fetchNews(page);
     _newsProvider.changeLoadingStatus(false);
   }
 
@@ -27,6 +27,7 @@ class NewsContainer extends StatelessWidget {
       child: NewsWidget(
         data: _newsProvider.newsData,
         getNews: getNews,
+        isLoading: _newsProvider.isLoading,
       ),
       isLoading: _newsProvider.isLoading,
     );

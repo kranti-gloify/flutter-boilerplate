@@ -53,19 +53,19 @@ class Themes {
               color: AppColors.black,
               height: 1.3,
               fontSize: 20,
-              fontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w600,
             ),
             headline4: baseTheme.textTheme.headline4.copyWith(
               color: AppColors.black,
               fontSize: 18,
-              fontWeight: FontWeight.w400,
+              fontWeight: FontWeight.w600,
             ),
-            headline5: baseTheme.textTheme.headline4.copyWith(
+            headline5: baseTheme.textTheme.headline5.copyWith(
               color: AppColors.black,
               fontSize: 16,
               fontWeight: FontWeight.w500,
             ),
-            headline6: baseTheme.textTheme.headline4.copyWith(
+            headline6: baseTheme.textTheme.headline6.copyWith(
               color: AppColors.black,
               fontSize: 14,
               fontWeight: FontWeight.w500,
@@ -73,23 +73,23 @@ class Themes {
             subtitle1: baseTheme.textTheme.subtitle1.copyWith(
               color: AppColors.primaryDark,
               height: 1.5,
-              fontSize: 18,
+              fontSize: 16,
               fontWeight: FontWeight.w400,
             ),
-            subtitle2: baseTheme.textTheme.subtitle1.copyWith(
-              color: AppColors.primaryDark,
+            subtitle2: baseTheme.textTheme.subtitle2.copyWith(
+              color: AppColors.lightSilver,
               fontSize: 14,
-              fontWeight: FontWeight.w300,
+              fontWeight: FontWeight.w400,
             ),
             bodyText1: baseTheme.textTheme.bodyText1.copyWith(
               color: AppColors.primaryDark,
               height: 1.5,
-              fontSize: 18,
+              fontSize: 16,
               fontWeight: FontWeight.w300,
             ),
-            bodyText2: baseTheme.textTheme.bodyText1.copyWith(
-              color: AppColors.primaryDark,
-              fontSize: 14,
+            bodyText2: baseTheme.textTheme.bodyText2.copyWith(
+              color: AppColors.lightSilver,
+              fontSize: 12,
               fontWeight: FontWeight.w300,
             ),
             button: baseTheme.textTheme.button.copyWith(
