@@ -10,8 +10,8 @@ class NewsWidget extends StatefulWidget {
 
   const NewsWidget({
     this.data,
-    @required this.getNews,
-    @required this.isLoading,
+    required this.getNews,
+    required this.isLoading,
   });
 
   @override

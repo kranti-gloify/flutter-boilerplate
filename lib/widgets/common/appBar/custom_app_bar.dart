@@ -3,12 +3,12 @@ import 'package:flutter_boilerplate/themes/colors.dart';
 import 'package:flutter_boilerplate/utils/navigations.dart';
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
-  final Widget title;
-  final List<Widget> actions;
+  final Widget? title;
+  final List<Widget>? actions;
   final bool centerTitle;
   final Color backgroundColor;
   final dynamic icon;
-  final Color iconColor;
+  final Color? iconColor;
   final double iconSize;
 
   CustomAppBar({

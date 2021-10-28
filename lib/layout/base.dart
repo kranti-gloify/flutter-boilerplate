@@ -18,8 +18,8 @@ import 'package:flutter_boilerplate/widgets/common/drawer/drawer.dart';
 ///
 
 class BaseLayout extends StatefulWidget {
-  final Widget page;
-  final bool isAppBar;
+  final Widget? page;
+  final bool? isAppBar;
   final String text;
 
   const BaseLayout({
@@ -36,7 +36,7 @@ class _BaseLayoutState extends State<BaseLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: widget.isAppBar
+      appBar: widget.isAppBar!
           ? CustomAppBar(
               title: Text(widget.text),
               backgroundColor: AppColors.primaryDark,

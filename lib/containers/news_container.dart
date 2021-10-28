@@ -6,11 +6,11 @@ import 'package:flutter_boilerplate/widgets/common/loading_overlay/loading_overl
 import 'package:flutter_boilerplate/widgets/news/news_widget.dart';
 
 class NewsContainer extends StatelessWidget {
-  static NewsProvider _newsProvider;
+  static late NewsProvider _newsProvider;
 
   void getNews(page) async {
     page < 2 ?? _newsProvider.changeLoadingStatus(true);
-    await _newsProvider.fetchNews(page);
+    _newsProvider.fetchNews(page);
     _newsProvider.changeLoadingStatus(false);
   }
 

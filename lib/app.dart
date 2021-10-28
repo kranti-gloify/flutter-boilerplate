@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         theme: Themes.buildLightTheme(),
         initialRoute: Routes.initialRoute,
         routes: Routes.buildRoutes,
-        onUnknownRoute: Routes.unknownRoute,
+        onUnknownRoute: Routes.unknownRoute as Route<dynamic>? Function(RouteSettings)?,
       ),
     );
   }

@@ -5,7 +5,7 @@ import 'package:flutter_boilerplate/core/services/news/news_services.dart';
 
 class NewsProvider extends ChangeNotifier {
   bool isLoading = true;
-  NewsModel newsData;
+  NewsModel? newsData;
 
   void changeLoadingStatus(bool loading) {
     new Future.delayed(new Duration(milliseconds: 300), () {
@@ -16,8 +16,8 @@ class NewsProvider extends ChangeNotifier {
 
   void fetchNews(page) async {
     final NewsModel response = await NewsService().fetchNews(page);
-    if (newsData != null && newsData.articles != null) {
-      newsData.articles.addAll(response.articles);
+    if (newsData != null && newsData!.articles != null) {
+      newsData!.articles!.addAll(response.articles!);
     } else {
       newsData = response;
     }

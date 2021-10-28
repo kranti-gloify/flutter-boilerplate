@@ -20,7 +20,7 @@ class PrimaryButton extends StatelessWidget {
   final String text;
 
   const PrimaryButton({
-    @required this.onPressed,
+    required this.onPressed,
     this.disabled = false,
     this.text = '',
   });
@@ -52,7 +52,7 @@ class PrimaryButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(4),
           ),
         ),
-        onPressed: disabled ? null : onPressed,
+        onPressed: disabled ? null : onPressed as void Function()?,
       ),
     );
   }
