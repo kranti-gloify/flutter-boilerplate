@@ -2,9 +2,9 @@
 ///
 
 class NewsModel {
-  final String status;
-  final int totalResults;
-  final List articles;
+  final String? status;
+  final int? totalResults;
+  final List? articles;
 
   const NewsModel({
     this.status,
