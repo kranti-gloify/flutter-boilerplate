@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate/resources/images.dart';
 import 'package:flutter_boilerplate/resources/strings.dart';
+import 'package:flutter_boilerplate/routes/routes.dart';
 import 'package:flutter_boilerplate/themes/colors.dart';
+import 'package:flutter_boilerplate/utils/navigations.dart';
 import 'package:flutter_boilerplate/widgets/common/buttons/primary_button.dart';
 
 /// [IntroductionScreen] is the intro screen that loads into the app.
@@ -15,11 +17,11 @@ class IntroductionScreen extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
-              width: MediaQuery.of(context).size.width,
+              width: MediaQuery.of(context).size.width * 0.5,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  fit: BoxFit.fill,
-                  image: AssetImage(Images.INTRO_IMG),
+                  fit: BoxFit.fitWidth,
+                  image: NetworkImage(Images.INTRO_IMG),
                 ),
               ),
             ),
@@ -78,9 +80,10 @@ class IntroductionScreen extends StatelessWidget {
                       Container(
                         margin: EdgeInsets.only(bottom: 50),
                         child: PrimaryButton(
-                            text: Strings.GET_STARTED, onPressed: () => {}
-                            // Navigation.pushNamed(context, Routes.login),
-                            ),
+                          text: Strings.GET_STARTED,
+                          onPressed: () =>
+                              Navigation.pushNamed(context, Routes.news),
+                        ),
                       )
                     ],
                   ),

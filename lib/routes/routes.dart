@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate/layout/base.dart';
 import 'package:flutter_boilerplate/screens/about/about.dart';
-import 'package:flutter_boilerplate/screens/splash/splash.dart';
 import 'package:flutter_boilerplate/screens/introduction/introduction.dart';
 import 'package:flutter_boilerplate/screens/news/news.dart';
+import 'package:flutter_boilerplate/screens/splash/splash.dart';
 import 'package:flutter_boilerplate/screens/webview/webViewScreen.dart';
 
 /// [Routes] which contains common routing configuaration needed for the Application.
@@ -56,6 +56,6 @@ class Routes {
 
   /// Configures the initial route.
   static String get initialRoute {
-    return Routes.news;
+    return Routes.splashScreen;
   }
 }

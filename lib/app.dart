@@ -15,12 +15,13 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        title: 'Update Me',
+        title: 'Flutter Boilerplate',
         debugShowCheckedModeBanner: false,
         theme: Themes.buildLightTheme(),
         initialRoute: Routes.initialRoute,
         routes: Routes.buildRoutes,
-        onUnknownRoute: Routes.unknownRoute as Route<dynamic>? Function(RouteSettings)?,
+        onUnknownRoute:
+            Routes.unknownRoute as Route<dynamic>? Function(RouteSettings)?,
       ),
     );
   }

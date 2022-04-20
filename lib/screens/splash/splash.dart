@@ -30,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Future<void> checkLogin() async {
     // SharedPreferences prefs = await SharedPreferences.getInstance();
 
-    bool isLogin = true;
+    // bool isLogin = true;
 
     Future.delayed(const Duration(milliseconds: 1500), () {
       if (isLogin) {
@@ -50,9 +50,10 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Center(
-              child: Image.asset(
+              child: Image.network(
                 Images.SPLASH_LOGO,
                 scale: 1,
+                width: MediaQuery.of(context).size.width * 0.5,
               ),
             ),
             Padding(

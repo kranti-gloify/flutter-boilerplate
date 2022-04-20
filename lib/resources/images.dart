@@ -7,8 +7,10 @@ class Images {
   Images._();
 
   // splash screen
-  static const String SPLASH_LOGO = 'assets/images/splash_logo.png';
-  static const String INTRO_IMG = 'assets/images/introduction.png';
+  static const String SPLASH_LOGO =
+      'https://i0.wp.com/nanophorm.com/wp-content/uploads/2018/04/google-logo-icon-PNG-Transparent-Background.png?w=1000&ssl=1';
+  static const String INTRO_IMG =
+      'https://i0.wp.com/nanophorm.com/wp-content/uploads/2018/04/google-logo-icon-PNG-Transparent-Background.png?w=1000&ssl=1';
   static const String BOOK_IMG = 'assets/images/book.png';
   static const String STUDENT = 'assets/images/student.png';
   static const String TEACHER = 'assets/images/teacher.png';
