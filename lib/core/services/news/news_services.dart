@@ -10,7 +10,6 @@ class NewsService {
     var response = await ServiceBase.get(
       url: url,
     );
-    print(response);
     return NewsModel.fromJson(jsonDecode(response.body), response.statusCode);
   }
 }

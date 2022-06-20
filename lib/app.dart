@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_boilerplate/providers/news_provider.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_boilerplate/bloc/news_bloc.dart';
+import 'package:flutter_boilerplate/core/services/news/news_services.dart';
 import 'package:flutter_boilerplate/routes/routes.dart';
 import 'package:flutter_boilerplate/themes/themes.dart';
-import 'package:provider/provider.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
+    return MultiBlocProvider(
       providers: [
-        ChangeNotifierProvider(
-          create: (_) => NewsProvider(),
+        BlocProvider(
+          create: (_) => NewsBloc(newsRepository: NewsService()),
         ),
       ],
       child: MaterialApp(
