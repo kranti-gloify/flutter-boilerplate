@@ -1,27 +1,66 @@
-# flutter_boilerplate
+Flutter Boilerplate
 
-A new Flutter application.
+Coding Best Practices
+Follow the link to read on coding best practices for dart and flutter Coding Best Practices
 
-## Getting Started
+Folder Structure and Naming Convention
+screens
+Naming Convention screens / [feature] / [feature].dart (or)
 
-This project is a starting point for a Flutter application.
+Includes Top level feature related dart files.
+Should be root level / parent file.
+No widgets be created inside the screens.
+===
 
-A few resources to get you started if this is your first Flutter project:
+widgets
+Contains, 1. common 2. [feature] related widgets
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Naming Convention widgets / [common] / [component].dart widgets / [widget] / [feature] / [feature_based_component].dart
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Common folder Should contain app level widgets.
+Create other [feature] level widgets in [feature] based folders.
+===
 
-- What is BLoC? (Business logic components (BLoC) allow you to separate the business logic from the UI. Writing code in BLoC makes it easier to write and reuse tests.In simple terms, BLoC accepts a stream of events, processes the data based on events, and produces the output as states. )
-- What is Events? (Events tell BLoC to do something. An event can be fired from anywhere, such as from a UI widget. External events, such as changes in network connectivity, changes in sensor readings, etc.)
-- What is States? (States represent the information to be processed by any widget. A widget changes itself based on the state.)
-- What is Cubit ? (Cubit is a simpler version of the BLoC pattern. It eliminates the need to write events. Cubit exposes direct functions, which can result in appropriate states. Writing a Cubit instead of BLoC also reduces boilerplate code, making the code easier to read.)
-- How to manage state with Bloc? 
-- First add bloc package (https://pub.dev/packages/flutter_bloc/install) & equatable package (https://pub.dev/packages/equatable/install) in pubspec.yaml file.
-- In, app.dart file Wrap Material app with MutiBlocProvider where you can add one after another bloC inside providers and pass the instance of respository to the bloC class.
-- Create a new folder for each bloc and each bloc contains its events and state.
-- Now you can build or update the rquired widget by Wrap the Widget with Blocbuilder where you can render your required widget accoding to the requirement inside builder method.
-- For details description of bloC, you can refer to this link (https://pub.dev/packages/flutter_bloc)
+core
+Contains, 1. Models 2. Services 3. exceptions
+
+Naming Convention Models - core / models / [model_name_model].dart Services - core / services / [feature] / [service_name_service].dart Exceptions - core / exceptions / [exception_name_exception].dart
+
+Always model for data modeling.
+Use services for making API Calls.
+Create own custom Exception always.
+Create feature based services.
+===
+
+bloc
+Naming Convention bloc / [feature] / [feature_bloc].dart
+
+Should create bloc widget for data orchestration.
+Always use bloc when handling FutureBuilder / StreamBuilder.
+Always use bloc for making API calls.
+===
+
+resources
+Contains, 1. images.dart 2. strings.dart 3. Any common resource(might be added in future)
+
+Naming Convention resources / [resource_name].dart
+
+Includes constant strings
+Includes image paths for easy access
+===
+
+routes
+Naming Convention routes / [route_name].dart
+
+===
+
+themes
+Contains, 1. color.dart 2. global_styles.dart 3. themes.dart 4. Any other common style related files(might be added in future)
+
+Includes common colors, global styles and common Typography.
+===
+
+utils
+utils / [util_name].dart
+
+Includes common utils needed by the application.(Ex: Dollar conversion, date conversion).
