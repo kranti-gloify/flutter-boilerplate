@@ -64,3 +64,6 @@ utils
 utils / [util_name].dart
 
 Includes common utils needed by the application.(Ex: Dollar conversion, date conversion).
+
+For more reference, you can follow the below link also:-
+https://docs.google.com/document/d/1WaUshVIcctoBrU5JrYIvsquJ-NvJ721A4pp2auA2CSE/edit
