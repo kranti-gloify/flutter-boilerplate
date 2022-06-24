@@ -9,7 +9,7 @@ class AboutScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Center(
-            child: Text("This app is developed "),
+            child: Text("This app was developed by Gloify"),
           ),
         ],
       ),

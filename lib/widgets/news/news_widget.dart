@@ -1,63 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_boilerplate/routes/routes.dart';
+import 'package:flutter_boilerplate/core/models/news_model.dart';
 import 'package:flutter_boilerplate/themes/colors.dart';
-import 'package:flutter_boilerplate/utils/navigations.dart';
+class NewsWidget extends StatelessWidget {
 
-class NewsWidget extends StatefulWidget {
-  final data;
-  final Function getNews;
-  final bool isLoading;
+  final NewsModel data;
+  final Function loadNewScreen;
+  final int index;
+  final Function fetchNews;
 
-  const NewsWidget({
-    this.data,
-    required this.getNews,
-    required this.isLoading,
+
+  NewsWidget({
+    required this.data,
+    required this.loadNewScreen,
+    required this.fetchNews,
+    required this.index
   });
-
-  @override
-  _NewsWidgetState createState() => _NewsWidgetState();
-}
-
-class _NewsWidgetState extends State<NewsWidget> {
-  int index = 0;
-  int page = 1;
-  @override
-  void initState() {
-    super.initState();
-    widget.data ?? widget.getNews(page);
-  }
-
+  
   @override
   Widget build(BuildContext context) {
-    if (widget.data != null) {
-      return new Dismissible(
+    return new Dismissible(
         key: Key(index.toString()),
         direction: index > 0 ? DismissDirection.vertical : DismissDirection.up,
         onDismissed: (direction) {
-          print(direction == DismissDirection.up);
-          if (direction == DismissDirection.down) {
-            if (index > 0) {
-              setState(() {
-                index--;
-              });
-            }
-          } else {
-            setState(() {
-              index++;
-            });
-          }
-          if (widget.data.articles.length - index < 15) {
-            setState(() {
-              page++;
-            });
-            widget.getNews(page++);
-          }
+          print("rahul");
+          fetchNews(direction);
         },
         child: new GestureDetector(
           onPanUpdate: (d) {
             if (d.delta.direction > 0) {
-              Navigation.pushNamed(context, Routes.webViewScreen,
-                  {'link': widget.data.articles[index]['url']});
+              loadNewScreen();
             }
           },
           child: new Column(
@@ -75,9 +46,9 @@ class _NewsWidgetState extends State<NewsWidget> {
                   ),
                 ),
                 height: 240,
-                child: widget.data.articles[index]['urlToImage'] != null
+                child: data.articles![index]['urlToImage'] != null
                     ? new Image.network(
-                        widget.data.articles[index]['urlToImage'],
+                        data.articles![index]['urlToImage'],
                         fit: BoxFit.fill,
                       )
                     : null,
@@ -85,7 +56,7 @@ class _NewsWidgetState extends State<NewsWidget> {
               new Padding(
                 padding: new EdgeInsets.all(20),
                 child: new Text(
-                  widget.data.articles[index]['title'],
+                  data.articles![index]['title'],
                   style: Theme.of(context).textTheme.headline4,
                 ),
               ),
@@ -95,7 +66,7 @@ class _NewsWidgetState extends State<NewsWidget> {
                     child: new SingleChildScrollView(
                       scrollDirection: Axis.vertical,
                       child: new Text(
-                        widget.data.articles[index]['description'],
+                        data.articles![index]['description'] != null ? data.articles![index]['description'] : '',
                         style: Theme.of(context).textTheme.subtitle1,
                       ),
                     )),
@@ -107,7 +78,7 @@ class _NewsWidgetState extends State<NewsWidget> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       new Text(
-                        'Source: ${widget.data.articles[index]["source"]["name"]}',
+                        'Source: ${data.articles![index]["source"]["name"]}',
                         style: Theme.of(context).textTheme.subtitle2,
                       ),
                       new Text(
@@ -122,17 +93,6 @@ class _NewsWidgetState extends State<NewsWidget> {
           ),
         ),
       );
-    } else {
-      return Container(
-        child: !widget.isLoading
-            ? Center(
-                child: Text(
-                  'Something went wrong!',
-                  style: Theme.of(context).textTheme.subtitle2,
-                ),
-              )
-            : null,
-      );
-    }
   }
+  
 }

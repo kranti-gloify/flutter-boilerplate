@@ -1,16 +1,69 @@
-# flutter_boilerplate
+Flutter Boilerplate
 
-A new Flutter application.
+Coding Best Practices
+Follow the link to read on coding best practices for dart and flutter Coding Best Practices
 
-## Getting Started
+Folder Structure and Naming Convention
+screens
+Naming Convention screens / [feature] / [feature].dart (or)
 
-This project is a starting point for a Flutter application.
+Includes Top level feature related dart files.
+Should be root level / parent file.
+No widgets be created inside the screens.
+===
 
-A few resources to get you started if this is your first Flutter project:
+widgets
+Contains, 1. common 2. [feature] related widgets
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Naming Convention widgets / [common] / [component].dart widgets / [widget] / [feature] / [feature_based_component].dart
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Common folder Should contain app level widgets.
+Create other [feature] level widgets in [feature] based folders.
+===
+
+core
+Contains, 1. Models 2. Services 3. exceptions
+
+Naming Convention Models - core / models / [model_name_model].dart Services - core / services / [feature] / [service_name_service].dart Exceptions - core / exceptions / [exception_name_exception].dart
+
+Always model for data modeling.
+Use services for making API Calls.
+Create own custom Exception always.
+Create feature based services.
+===
+
+bloc
+Naming Convention bloc / [feature] / [feature_bloc].dart
+
+Should create bloc widget for data orchestration.
+Always use bloc when handling FutureBuilder / StreamBuilder.
+Always use bloc for making API calls.
+===
+
+resources
+Contains, 1. images.dart 2. strings.dart 3. Any common resource(might be added in future)
+
+Naming Convention resources / [resource_name].dart
+
+Includes constant strings
+Includes image paths for easy access
+===
+
+routes
+Naming Convention routes / [route_name].dart
+
+===
+
+themes
+Contains, 1. color.dart 2. global_styles.dart 3. themes.dart 4. Any other common style related files(might be added in future)
+
+Includes common colors, global styles and common Typography.
+===
+
+utils
+utils / [util_name].dart
+
+Includes common utils needed by the application.(Ex: Dollar conversion, date conversion).
+
+For more reference, you can follow the below link also:-
+https://docs.google.com/document/d/1WaUshVIcctoBrU5JrYIvsquJ-NvJ721A4pp2auA2CSE/edit
