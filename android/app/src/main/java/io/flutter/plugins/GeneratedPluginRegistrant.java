@@ -41,6 +41,11 @@ public final class GeneratedPluginRegistrant {
       Log.e(TAG, "Error registering plugin razorpay_flutter, com.razorpay.razorpay_flutter.RazorpayFlutterPlugin", e);
     }
     try {
+      flutterEngine.getPlugins().add(new com.az.upi_india.UpiIndiaPlugin());
+    } catch(Exception e) {
+      Log.e(TAG, "Error registering plugin upi_india, com.az.upi_india.UpiIndiaPlugin", e);
+    }
+    try {
       flutterEngine.getPlugins().add(new io.flutter.plugins.webviewflutter.WebViewFlutterPlugin());
     } catch(Exception e) {
       Log.e(TAG, "Error registering plugin webview_flutter_android, io.flutter.plugins.webviewflutter.WebViewFlutterPlugin", e);
