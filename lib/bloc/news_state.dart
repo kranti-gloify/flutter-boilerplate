@@ -7,7 +7,6 @@ class NewsLoaddedState extends NewsState {
   final NewsModel model;
   NewsLoaddedState(this.model);
   @override
-  // TODO: implement props
   List<Object?> get props => [model];
 
 }

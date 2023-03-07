@@ -11,7 +11,7 @@ class ErrorDisplayWidget extends StatelessWidget {
     child: Center(
       child: Text(
         errorMessage,
-        style:Theme.of(context).textTheme.subtitle1,
+        style:Theme.of(context).textTheme.titleMedium,
       )
     ),
    );

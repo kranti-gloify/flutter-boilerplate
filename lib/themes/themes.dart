@@ -39,65 +39,65 @@ class Themes {
     return baseTheme.textTheme
         .copyWith(
             // not in use
-            headline1: baseTheme.textTheme.headline1!.copyWith(
+            displayLarge: baseTheme.textTheme.displayLarge!.copyWith(
               color: AppColors.black,
               fontSize: 28,
               fontWeight: FontWeight.w500,
             ),
-            headline2: baseTheme.textTheme.headline2!.copyWith(
+            displayMedium: baseTheme.textTheme.displayMedium!.copyWith(
               color: AppColors.black,
               fontSize: 24,
               fontWeight: FontWeight.w600,
             ),
-            headline3: baseTheme.textTheme.headline3!.copyWith(
+            displaySmall: baseTheme.textTheme.displaySmall!.copyWith(
               color: AppColors.black,
               height: 1.3,
               fontSize: 20,
               fontWeight: FontWeight.w600,
             ),
-            headline4: baseTheme.textTheme.headline4!.copyWith(
+            headlineMedium: baseTheme.textTheme.headlineMedium!.copyWith(
               color: AppColors.black,
               fontSize: 18,
               fontWeight: FontWeight.w600,
             ),
-            headline5: baseTheme.textTheme.headline5!.copyWith(
+            headlineSmall: baseTheme.textTheme.headlineSmall!.copyWith(
               color: AppColors.black,
               fontSize: 16,
               fontWeight: FontWeight.w500,
             ),
-            headline6: baseTheme.textTheme.headline6!.copyWith(
+            titleLarge: baseTheme.textTheme.titleLarge!.copyWith(
               color: AppColors.black,
               fontSize: 14,
               fontWeight: FontWeight.w500,
             ),
-            subtitle1: baseTheme.textTheme.subtitle1!.copyWith(
+            titleMedium: baseTheme.textTheme.titleMedium!.copyWith(
               color: AppColors.primaryDark,
               height: 1.5,
               fontSize: 16,
               fontWeight: FontWeight.w400,
             ),
-            subtitle2: baseTheme.textTheme.subtitle2!.copyWith(
+            titleSmall: baseTheme.textTheme.titleSmall!.copyWith(
               color: AppColors.lightSilver,
               fontSize: 14,
               fontWeight: FontWeight.w400,
             ),
-            bodyText1: baseTheme.textTheme.bodyText1!.copyWith(
+            bodyLarge: baseTheme.textTheme.bodyLarge!.copyWith(
               color: AppColors.primaryDark,
               height: 1.5,
               fontSize: 16,
               fontWeight: FontWeight.w300,
             ),
-            bodyText2: baseTheme.textTheme.bodyText2!.copyWith(
+            bodyMedium: baseTheme.textTheme.bodyMedium!.copyWith(
               color: AppColors.lightSilver,
               fontSize: 12,
               fontWeight: FontWeight.w300,
             ),
-            button: baseTheme.textTheme.button!.copyWith(
+            labelLarge: baseTheme.textTheme.labelLarge!.copyWith(
               color: AppColors.white,
               fontSize: 16,
               fontWeight: FontWeight.w600,
             ),
-            caption: baseTheme.textTheme.subtitle1!.copyWith(
+            bodySmall: baseTheme.textTheme.titleMedium!.copyWith(
               color: AppColors.primaryDark,
               fontSize: 14,
               fontWeight: FontWeight.w500,

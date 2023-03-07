@@ -57,7 +57,7 @@ class NewsWidget extends StatelessWidget {
                 padding: new EdgeInsets.all(20),
                 child: new Text(
                   data.articles![index]['title'],
-                  style: Theme.of(context).textTheme.headline4,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
               ),
               new Expanded(
@@ -67,7 +67,7 @@ class NewsWidget extends StatelessWidget {
                       scrollDirection: Axis.vertical,
                       child: new Text(
                         data.articles![index]['description'] != null ? data.articles![index]['description'] : '',
-                        style: Theme.of(context).textTheme.subtitle1,
+                        style: Theme.of(context).textTheme.titleMedium,
                       ),
                     )),
               ),
@@ -79,11 +79,11 @@ class NewsWidget extends StatelessWidget {
                     children: [
                       new Text(
                         'Source: ${data.articles![index]["source"]["name"]}',
-                        style: Theme.of(context).textTheme.subtitle2,
+                        style: Theme.of(context).textTheme.titleSmall,
                       ),
                       new Text(
                         'Swip left for read more >',
-                        style: Theme.of(context).textTheme.bodyText2,
+                        style: Theme.of(context).textTheme.bodyMedium,
                       ),
                     ],
                   ),

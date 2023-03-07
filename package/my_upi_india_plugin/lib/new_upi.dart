@@ -25,7 +25,7 @@ class Upipayment extends StatefulWidget {
 }
 
 class _UpipaymentState extends State<Upipayment> {
-  Future<UpiResponse>? _transaction;
+  Future<UpiResponse>? transaction;
   final UpiIndia _upiIndia = UpiIndia();
   List<UpiApp>? apps;
 
@@ -88,7 +88,7 @@ class _UpipaymentState extends State<Upipayment> {
             children: apps!.map<Widget>((UpiApp app) {
               return GestureDetector(
                 onTap: () {
-                  _transaction = initiateTransaction(
+                  transaction = initiateTransaction(
                     app: app,
                     amount: widget.amount,
                     receiverName: widget.receiverName,

@@ -16,7 +16,6 @@ class NewsBloc extends Bloc<NewsEvents,NewsState> {
 
 
   NewsBloc({required this.newsRepository}) : super(NewsLoadingSate()) {
-    // TODO: implement 
     on<FetchNewsEvent>(fetchNews);
   }
 

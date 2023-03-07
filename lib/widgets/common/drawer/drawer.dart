@@ -29,7 +29,7 @@ class CustomDrawer extends StatelessWidget {
                       sideNav[index]['name'],
                       style: Theme.of(context)
                           .textTheme
-                          .headline4!
+                          .headlineMedium!
                           .apply(color: AppColors.white),
                     ),
                   ),

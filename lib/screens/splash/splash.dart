@@ -60,7 +60,7 @@ class _SplashScreenState extends State<SplashScreen> {
               padding: const EdgeInsets.only(top: 20),
               child: Text(
                 Strings.SPLASH_TEXT,
-                style: Theme.of(context).textTheme.subtitle1,
+                style: Theme.of(context).textTheme.titleMedium,
               ),
             ),
           ],

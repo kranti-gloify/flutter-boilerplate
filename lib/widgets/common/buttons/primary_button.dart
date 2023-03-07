@@ -36,7 +36,7 @@ class PrimaryButton extends StatelessWidget {
             alignment: Alignment.center,
             child: Text(text,
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.button),
+                style: Theme.of(context).textTheme.labelLarge),
           ),
           decoration: BoxDecoration(
             gradient: LinearGradient(
