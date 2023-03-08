@@ -2,10 +2,13 @@ part of 'news_bloc.dart';
 
 abstract class NewsEvents extends Equatable {
   const NewsEvents();
+
+  @override
+  List<Object?> get props => [];
 }
 
 class FetchNewsEvent extends NewsEvents {
-  int pageNumber;
+  final int pageNumber;
 
   FetchNewsEvent(this.pageNumber);
   @override
