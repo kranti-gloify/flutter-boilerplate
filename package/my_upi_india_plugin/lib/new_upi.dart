@@ -20,8 +20,7 @@ class Upipayment extends StatefulWidget {
   });
 
   @override
-  // ignore: library_private_types_in_public_api
-  _UpipaymentState createState() => _UpipaymentState();
+  State createState() => _UpipaymentState();
 }
 
 class _UpipaymentState extends State<Upipayment> {
