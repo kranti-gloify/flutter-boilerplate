@@ -29,6 +29,7 @@ dependencies:
   webview_flutter: ^2.1.2
   flutter_bloc: ^8.0.1 
   equatable: ^2.0.3
+  shimmer: ^2.0.0
   
 
 

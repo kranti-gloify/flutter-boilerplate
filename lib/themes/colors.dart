@@ -21,4 +21,6 @@ class AppColors {
   static final Color primary = Pigment.fromString('#225163');
   static final Color primaryDark = Pigment.fromString('#002939');
   static final Color primaryLight = Pigment.fromString('#517d91');
+  static final Color shimmerBg = Pigment.fromString('#808080ff');
+  static final Color shimmerOverlay = Pigment.fromString('#c9c9c9ff');
 }
