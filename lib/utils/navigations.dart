@@ -12,22 +12,24 @@ import 'package:flutter/material.dart';
 ///
 class Navigation {
   Navigation._();
-  static dynamic pushNamed(BuildContext context, String routeName,
+  static Future<dynamic> pushNamed(BuildContext context, String routeName,
       [Object? arguments]) {
-    Navigator.of(context).pushNamed(routeName, arguments: arguments);
+    return Navigator.of(context).pushNamed(routeName, arguments: arguments);
   }
 
-  static dynamic pushReplacementNamed(BuildContext context, String routeName,
+  static Future<dynamic> pushReplacementNamed(
+      BuildContext context, String routeName,
       [Object? arguments]) {
-    Navigator.of(context).pushReplacementNamed(
+    return Navigator.of(context).pushReplacementNamed(
       routeName,
       arguments: arguments,
     );
   }
 
-  static dynamic pushAndRemoveUntil(BuildContext context, String routeName,
+  static Future<dynamic> pushAndRemoveUntil(
+      BuildContext context, String routeName,
       [Object? arguments]) {
-    Navigator.of(context).pushNamedAndRemoveUntil(
+    return Navigator.of(context).pushNamedAndRemoveUntil(
         routeName, (Route<dynamic> route) => false,
         arguments: arguments);
   }
@@ -37,9 +39,10 @@ class Navigation {
   }
 
   /// [popAndPushNamed] - Pop the current route off the navigator and push a named route in its place.
-  static dynamic popAndPushNamed(BuildContext context, String routeName,
+  static Future<dynamic> popAndPushNamed(BuildContext context, String routeName,
       [Object? arguments]) {
-    Navigator.of(context).popAndPushNamed(routeName, arguments: arguments);
+    return Navigator.of(context)
+        .popAndPushNamed(routeName, arguments: arguments);
   }
 
   static bool canPop(BuildContext context) {
