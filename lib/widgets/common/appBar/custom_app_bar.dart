@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate/themes/colors.dart';
 import 'package:flutter_boilerplate/utils/navigations.dart';
 
-class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? title;
   final List<Widget>? actions;
   final bool centerTitle;
