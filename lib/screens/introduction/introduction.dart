@@ -35,7 +35,7 @@ class IntroductionScreen extends StatelessWidget {
               children: [
                 Text(
                   Strings.INTRO_TITLE,
-                  style: Theme.of(context).textTheme.headline2,
+                  style: Theme.of(context).textTheme.displayMedium,
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 25),
@@ -44,7 +44,7 @@ class IntroductionScreen extends StatelessWidget {
                     children: [
                       Text(
                         Strings.INTRO_LIST_TITLE,
-                        style: Theme.of(context).textTheme.subtitle1,
+                        style: Theme.of(context).textTheme.titleMedium,
                       ),
                       ListView.builder(
                         padding: EdgeInsets.fromLTRB(0, 20, 0, 25),
@@ -68,7 +68,7 @@ class IntroductionScreen extends StatelessWidget {
                                     child: Text(
                                       Strings.INTRO_LIST[index],
                                       style:
-                                          Theme.of(context).textTheme.bodyText1,
+                                          Theme.of(context).textTheme.bodyLarge,
                                     ),
                                   ),
                                 )

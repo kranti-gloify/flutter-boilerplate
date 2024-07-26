@@ -5,7 +5,6 @@ import 'package:flutter_boilerplate/core/models/news_model.dart';
 import 'package:flutter_boilerplate/routes/routes.dart';
 import 'package:flutter_boilerplate/themes/colors.dart';
 import 'package:flutter_boilerplate/utils/navigations.dart';
-import 'package:flutter_boilerplate/widgets/common/loading_overlay/loading_overlay.dart';
 import 'package:flutter_boilerplate/widgets/news/news_widget.dart';
 
 import '../../widgets/common/error/error_widget.dart';
@@ -24,7 +23,6 @@ class _NewsState extends State<News> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _newsBloc = BlocProvider.of<NewsBloc>(context,listen: false);
     getNewsData();

@@ -19,7 +19,7 @@ class Strings {
     'Efficient and has best practices'
   ];
 
-  static const NO_INTERNET_ALERT = 'No internet availble. Please check your connection';
+  static const noInternetAlert = 'No internet availble. Please check your connection';
   static const FORMAT_ALERT = 'Format exception happen. Please check';
   static const HTTP_ALERT = 'No service available. Please try again later';
   static const GET_STARTED = 'Get Started';

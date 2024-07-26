@@ -16,7 +16,6 @@ class NewsBloc extends Bloc<NewsEvents,NewsState> {
 
 
   NewsBloc({required this.newsRepository}) : super(NewsLoadingSate()) {
-    // TODO: implement 
     on<FetchNewsEvent>(fetchNews);
   }
 
@@ -25,7 +24,7 @@ class NewsBloc extends Bloc<NewsEvents,NewsState> {
         newsData= await newsRepository.fetchNews(event.pageNumber);
         emitter(NewsLoaddedState(newsData!));
       }on SocketException {
-        emitter(NewsErrorState(Strings.NO_INTERNET_ALERT));
+        emitter(NewsErrorState(Strings.noInternetAlert));
       } on HttpException {
         emitter(NewsErrorState(Strings.HTTP_ALERT));
       } on FormatException {

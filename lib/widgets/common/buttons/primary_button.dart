@@ -29,16 +29,14 @@ class PrimaryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 48,
-      child: RaisedButton(
-        elevation: 0,
-        padding: EdgeInsets.all(0.0),
+      child: ElevatedButton(
         child: Ink(
           child: Container(
             constraints: BoxConstraints(),
             alignment: Alignment.center,
             child: Text(text,
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.button),
+                style: Theme.of(context).textTheme.labelLarge),
           ),
           decoration: BoxDecoration(
             gradient: LinearGradient(
