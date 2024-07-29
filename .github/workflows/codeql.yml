@@ -1,0 +1,90 @@
+name: CodeQL
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 0 * * 1' # Weekly on Monday
+
+jobs:
+  analyze-android:
+    name: Analyze Android
+    runs-on: ubuntu-latest
+
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'java' ] # CodeQL supports Java, which includes Kotlin and Dart
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v2
+      with:
+        languages: ${{ matrix.language }}
+
+    - name: Set up Flutter
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y wget tar xz-utils libglu1-mesa
+        wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_2.2.3-stable.tar.xz
+        tar xf flutter_linux_2.2.3-stable.tar.xz
+        export PATH="$PATH:`pwd`/flutter/bin"
+        flutter doctor
+        flutter pub get
+
+    - name: Build Flutter project (Android)
+      run: |
+        flutter build apk
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v2
+      with:
+        category: '/language:${{ matrix.language }}'
+
+  analyze-ios:
+    name: Analyze iOS
+    runs-on: macos-latest
+
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'java' ] # CodeQL supports Java, which includes Kotlin and Dart
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v2
+      with:
+        languages: ${{ matrix.language }}
+
+    - name: Set up Flutter
+      run: |
+        brew install --cask flutter
+        flutter doctor
+        flutter pub get
+
+    - name: Build Flutter project (iOS)
+      run: |
+        flutter build ios --no-codesign
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v2
+      with:
+        category: '/language:${{ matrix.language }}'
