@@ -36,8 +36,8 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y wget tar xz-utils libglu1-mesa
-        wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_2.2.3-stable.tar.xz
-        tar xf flutter_linux_2.2.3-stable.tar.xz
+        wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.22.2-stable.tar.xz
+        tar xf flutter_linux_3.22.2-stable.tar.xz
         export PATH="$PATH:`pwd`/flutter/bin"
         flutter doctor
         flutter pub get
