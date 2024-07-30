@@ -99,6 +99,9 @@ lib/
     // Other top-level screens
   router/
     app_router.dart        // Routing configuration
+  widgets/
+    error-popup.dart       // Common Widgets
+    // Other Common Widgets
   firebase_options.dart    // Firebase configuration
   main.dart                // Application entry point
 ```
